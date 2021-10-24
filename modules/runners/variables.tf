@@ -29,6 +29,12 @@ variable "tags" {
   default     = {}
 }
 
+variable "runner_ec2_tags" {
+  description = "Map of tags that will be added to your runner EC2s only. By default resources will be tagged with name and environment."
+  type        = map(string)
+  default     = {}
+}
+
 variable "environment" {
   description = "A name that identifies the environment, used as prefix and for tagging."
   type        = string

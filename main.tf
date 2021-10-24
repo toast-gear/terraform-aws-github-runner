@@ -73,6 +73,7 @@ module "runners" {
   subnet_ids  = var.subnet_ids
   environment = var.environment
   tags        = local.tags
+  runner_tags = var.runner_ec2_tags
 
   s3_bucket_runner_binaries   = module.runner_binaries.bucket
   s3_location_runner_binaries = local.s3_action_runner_url

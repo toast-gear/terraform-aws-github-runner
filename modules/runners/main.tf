@@ -6,7 +6,7 @@ locals {
     {
       "Environment" = format("%s", var.environment)
     },
-    var.tags,
+    var.tags
   )
 
   name_sg                        = var.overrides["name_sg"] == "" ? local.tags["Name"] : var.overrides["name_sg"]
@@ -93,6 +93,7 @@ resource "aws_launch_template" "runner" {
       {
         "Name" = format("%s", local.name_runner)
       },
+      var.runner_ec2_tags
     )
   }
 
